@@ -1,13 +1,12 @@
 import requests
 import config
 from bs4 import BeautifulSoup
-from Record import Record
 
 class Scrape:
     def refresh(self):
         try:
             # Get the page itself and make it parseable
-            page = requests.get(f"http://wsprnet.org/olddb?mode=html&band=all&limit=50&findcall=&findreporter={config.RECEIVED_BY}&sort=date")
+            page = requests.get(f"http://wsprnet.org/olddb?mode=html&band=all&limit=500&findcall=&findreporter={config.RECEIVED_BY}&sort=date")
         except:
             return { 'status': 500 }
         
