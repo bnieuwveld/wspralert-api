@@ -11,8 +11,8 @@ scraper = Scrape()
 @app.route('/api/scrape')
 def root():
     # Get the query parameters
-    min_power = float(request.args.get("min_power")) or 0
-    min_distance = float(request.args.get("min_distance")) or 0
+    min_power = float(request.args.get("min_power"))
+    min_distance = float(request.args.get("min_distance"))
 
     refresh = scraper.refresh()
 
